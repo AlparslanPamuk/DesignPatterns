@@ -53,4 +53,30 @@ namespace FactoryMethod
             Console.WriteLine("Logged with MustafaAlparlanPamukLogger!");
         }
     }
+
+    public class MustafaPamukLogger : Ilogger
+    {
+        public void Log()
+        {
+            Console.WriteLine("Logged with MustafaPamukLogger!");
+        }
+    }
+
+    public class CustomerManager
+    {
+        private IloggerFactory _loggerFactory;
+
+        public CustomerManager(IloggerFactory loggerfactory)
+        {
+            _loggerFactory = loggerfactory;
+        }
+        public void Save()
+        {
+            Console.WriteLine("Saved!");
+            Ilogger logger = _loggerFactory.CreateLogger();
+            logger.Log();
+        }
+
+
+    }
 }
