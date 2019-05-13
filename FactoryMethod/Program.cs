@@ -35,4 +35,22 @@ namespace FactoryMethod
             return new MustafaPamukLogger();
         }
     }
+
+    public interface IloggerFactory
+    {
+        Ilogger CreateLogger();
+    }
+
+    public interface Ilogger
+    {
+        void Log();
+    }
+
+    public class MustafaAlparlanPamukLogger : Ilogger
+    {
+        public void Log()
+        {
+            Console.WriteLine("Logged with MustafaAlparlanPamukLogger!");
+        }
+    }
 }
