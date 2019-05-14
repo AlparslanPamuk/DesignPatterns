@@ -58,7 +58,20 @@ namespace AbstractFactory
 
     public abstract class CrossCuttingConcernsFactory
     {
-
+        public abstract Logging CreateLogger();
+        public abstract Caching GetCaching();
     }
 
+    public class Factory1 : CrossCuttingConcernsFactory
+    {
+        public override Logging CreateLogger()
+        {
+            return new Log4NetLogger();
+        }
+
+        public override Caching GetCaching()
+        {
+            return new RedisCache();
+        }
+    }
 }
