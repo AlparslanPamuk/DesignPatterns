@@ -10,7 +10,9 @@ namespace AbstractFactory
     {
         static void Main(string[] args)
         {
-
+            ProductManager productManager = new ProductManager(new Factory1());
+            productManager.GetAll();
+            Console.ReadLine();
         }
     }
 
@@ -59,7 +61,7 @@ namespace AbstractFactory
     public abstract class CrossCuttingConcernsFactory
     {
         public abstract Logging CreateLogger();
-        public abstract Caching GetCaching();
+        public abstract Caching CreateCaching();
     }
 
     public class Factory1 : CrossCuttingConcernsFactory
@@ -69,7 +71,7 @@ namespace AbstractFactory
             return new Log4NetLogger();
         }
 
-        public override Caching GetCaching()
+        public override Caching CreateCaching()
         {
             return new RedisCache();
         }
@@ -82,7 +84,7 @@ namespace AbstractFactory
             return new NLogger();
         }
 
-        public override Caching GetCaching()
+        public override Caching CreateCaching()
         {
             return new RedisCache();
         }
@@ -92,12 +94,19 @@ namespace AbstractFactory
     {
         private CrossCuttingConcernsFactory _crossCuttingConcernsFactory;
 
+        private Logging _logging;
+        private Caching _caching;
         public ProductManager(CrossCuttingConcernsFactory crossCuttongConcernsFactory)
         {
             _crossCuttingConcernsFactory = crossCuttongConcernsFactory;
+            _logging = _crossCuttingConcernsFactory.CreateLogger();
+            _caching = _crossCuttingConcernsFactory.CreateCaching();
         }
         public void GetAll() 
         {
+            _logging.Log("Logged");
+            _caching.Cache("Data");
+            
             Console.WriteLine("Products Listed!");
         }
     }

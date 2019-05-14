@@ -1,0 +1,7 @@
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\AbstractFactory\bin\Debug\AbstractFactory.exe.config
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\AbstractFactory\bin\Debug\AbstractFactory.exe
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\AbstractFactory\bin\Debug\AbstractFactory.pdb
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\AbstractFactory\obj\Debug\AbstractFactory.csprojAssemblyReference.cache
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\AbstractFactory\obj\Debug\AbstractFactory.csproj.CoreCompileInputs.cache
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\AbstractFactory\obj\Debug\AbstractFactory.exe
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\AbstractFactory\obj\Debug\AbstractFactory.pdb
