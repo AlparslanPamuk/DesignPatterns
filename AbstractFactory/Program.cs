@@ -74,4 +74,32 @@ namespace AbstractFactory
             return new RedisCache();
         }
     }
+
+    public class Factory2 : CrossCuttingConcernsFactory
+    {
+        public override Logging CreateLogger()
+        {
+            return new NLogger();
+        }
+
+        public override Caching GetCaching()
+        {
+            return new RedisCache();
+        }
+    }
+
+    public class ProductManager
+    {
+        private CrossCuttingConcernsFactory _crossCuttingConcernsFactory;
+
+        public ProductManager(CrossCuttingConcernsFactory crossCuttongConcernsFactory)
+        {
+            _crossCuttingConcernsFactory = crossCuttongConcernsFactory;
+        }
+        public void GetAll() 
+        {
+            Console.WriteLine("Products Listed!");
+        }
+    }
+
 }
