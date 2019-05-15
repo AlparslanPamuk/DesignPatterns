@@ -1,0 +1,7 @@
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Prototype\bin\Debug\Prototype.exe.config
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Prototype\bin\Debug\Prototype.exe
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Prototype\bin\Debug\Prototype.pdb
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Prototype\obj\Debug\Prototype.csprojAssemblyReference.cache
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Prototype\obj\Debug\Prototype.csproj.CoreCompileInputs.cache
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Prototype\obj\Debug\Prototype.exe
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Prototype\obj\Debug\Prototype.pdb
