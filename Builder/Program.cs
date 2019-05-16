@@ -10,6 +10,21 @@ namespace Builder
     {
         static void Main(string[] args)
         {
+            ProductDirector director = new ProductDirector();
+            var builder = new NewCustomerProductBuilder();
+            //var builder = new OldCustomerProductBuilder();
+            director.GenerateProduct(builder);
+            var model = builder.GetModel();
+
+            Console.WriteLine(model.Id);
+            Console.WriteLine(model.CategoryName);
+            Console.WriteLine(model.DiscountApplied);
+            Console.WriteLine(model.DiscountedPrice);
+            Console.WriteLine(model.ProductName);
+            Console.WriteLine(model.Unitprice);
+
+            Console.ReadLine();
+
 
         }
     }
@@ -28,6 +43,7 @@ namespace Builder
     {
         public abstract void GetProductData();
         public abstract void ApplyDiscount();
+        public abstract ProductViewModel GetModel();
 
     }
 
@@ -39,6 +55,11 @@ namespace Builder
         {
             model.DiscountedPrice = model.Unitprice * (decimal)0.90;
             model.DiscountApplied = true;
+        }
+
+        public override ProductViewModel GetModel()
+        {
+            return model;
         }
 
         public override void GetProductData()
@@ -60,12 +81,26 @@ namespace Builder
             model.DiscountApplied = false;
         }
 
+        public override ProductViewModel GetModel()
+        {
+            return model;
+        }
+
         public override void GetProductData()
         {
             model.Id = 1;
             model.CategoryName = "Beverages";
             model.ProductName = "Chai";
             model.Unitprice = 20;
+        }
+    }
+
+    class ProductDirector
+    {
+        public void GenerateProduct(ProductBuilder productbuilder)
+        {
+            productbuilder.GetProductData();
+            productbuilder.ApplyDiscount(); // processess in queue
         }
     }
 }
