@@ -1,0 +1,2 @@
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Facade\obj\Debug\Facade.csprojAssemblyReference.cache
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Facade\obj\Debug\Facade.csproj.CoreCompileInputs.cache

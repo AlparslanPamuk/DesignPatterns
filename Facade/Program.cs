@@ -10,7 +10,9 @@ namespace Facade
     {
         static void Main(string[] args)
         {
-
+            CustomerManager customerManager = new CustomerManager();
+            customerManager.Save();
+            Console.ReadLine();
         }
     }
 
@@ -57,27 +59,40 @@ namespace Facade
 
     class CustomerManager
     {
-        private ILogging _logging;
-        private ICaching _caching;
-        private IAuthorize _authorize;
+        private CrossCuttingConcernsFacade _concerns;
 
-        public CustomerManager(ILogging logging, ICaching caching, IAuthorize authorize)
+
+        public CustomerManager()
         {
-            _logging = logging;
-            _caching = caching;
-            _authorize = authorize;
+            _concerns = new CrossCuttingConcernsFacade();
         }
 
         public void Save()
         {
-            _logging.Log();
-            _caching.Cache();
-            _authorize.CheckUser();
+            _concerns.Caching.Cache();
+            _concerns.Authorize.CheckUser();
+            _concerns.Logging.Log();
             Console.WriteLine();
         }
 
 
     }
+
+    class CrossCuttingConcernsFacade
+    {
+        public ILogging Logging;
+        public ICaching Caching;
+        public IAuthorize Authorize;
+
+        public CrossCuttingConcernsFacade()
+        {
+            Logging = new Logging();
+            Caching = new Caching();
+            Authorize = new Authorize();
+        }
+    }
+
+}
 
 
    
