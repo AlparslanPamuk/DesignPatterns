@@ -20,7 +20,7 @@ namespace Builder
         public string CategoryName { get; set; }
         public string ProductName { get; set; }
         public decimal Unitprice { get; set; }
-        public int Discount { get; set; }
+        public decimal DiscountedPrice { get; set; }
         public bool DiscountApplied { get; set; }
     }
 
@@ -33,27 +33,39 @@ namespace Builder
 
     class NewCustomerProductBuilder : ProductBuilder // To courage new customer to buy smth will be discounted about %10 for instance
     {
+        ProductViewModel model = new ProductViewModel();
+
         public override void ApplyDiscount()
         {
-            throw new NotImplementedException();
+            model.DiscountedPrice = model.Unitprice * (decimal)0.90;
+            model.DiscountApplied = true;
         }
 
         public override void GetProductData()
         {
-            throw new NotImplementedException();
+            model.Id = 1;
+            model.CategoryName = "Beverages";
+            model.ProductName = "Chai";
+            model.Unitprice = 20;
         }
     }
 
     class OldCustomerProductBuilder : ProductBuilder
     {
+        ProductViewModel model = new ProductViewModel();
+
         public override void ApplyDiscount()
         {
-            throw new NotImplementedException();
+            model.DiscountedPrice = model.Unitprice;
+            model.DiscountApplied = false;
         }
 
         public override void GetProductData()
         {
-            throw new NotImplementedException();
+            model.Id = 1;
+            model.CategoryName = "Beverages";
+            model.ProductName = "Chai";
+            model.Unitprice = 20;
         }
     }
 }
