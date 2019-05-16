@@ -14,7 +14,7 @@ namespace Facade
         }
     }
 
-    class Logging
+    class Logging : ILogging
     {
         public void Log()
         {
@@ -22,7 +22,12 @@ namespace Facade
         }
     }
 
-    class Caching
+    internal interface ILogging
+    {
+        void Log();
+    }
+
+    class Caching : ICaching
     {
         public void Cache()
         {
@@ -30,7 +35,12 @@ namespace Facade
         }
     }
 
-    class Authorize
+    internal interface ICaching
+    {
+        void Cache();
+    }
+
+    class Authorize : IAuthorize
     {
         public void CheckUser()
         {
@@ -38,5 +48,36 @@ namespace Facade
         }
     }
 
+    internal interface IAuthorize
+    {
+        void CheckUser();
+    }
 
-}
+
+
+    class CustomerManager
+    {
+        private ILogging _logging;
+        private ICaching _caching;
+        private IAuthorize _authorize;
+
+        public CustomerManager(ILogging logging, ICaching caching, IAuthorize authorize)
+        {
+            _logging = logging;
+            _caching = caching;
+            _authorize = authorize;
+        }
+
+        public void Save()
+        {
+            _logging.Log();
+            _caching.Cache();
+            _authorize.CheckUser();
+            Console.WriteLine();
+        }
+
+
+    }
+
+
+   
