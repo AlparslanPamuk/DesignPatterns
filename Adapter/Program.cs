@@ -10,13 +10,21 @@ namespace Adapter
     {
         static void Main(string[] args)
         {
-
+            //ProductManager productmanager = new ProductManager(new MustafaLogger());
+            ProductManager productmanager = new ProductManager(new Log4NetAdapter());
+            productmanager.Save();
+            Console.ReadLine();
         }
     }
 
     class ProductManager
     {
-        Ilogger _logger;
+        private Ilogger _logger;
+
+        public ProductManager(Ilogger logger)
+        {
+            _logger = logger;
+        }
 
         public void Save()
         {
@@ -45,6 +53,15 @@ namespace Adapter
         public void LogMessage(string message)
         {
             Console.WriteLine("Logged with Log4Net, {0}",message);
+        }
+    }
+
+    class Log4NetAdapter : Ilogger
+    {
+        public void Log(string message)
+        {
+            Log4Net log4Net = new Log4Net();
+            log4Net.LogMessage(message);
         }
     }
 }
