@@ -1,0 +1,7 @@
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Composite\bin\Debug\Composite.exe.config
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Composite\bin\Debug\Composite.exe
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Composite\bin\Debug\Composite.pdb
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Composite\obj\Debug\Composite.csprojAssemblyReference.cache
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Composite\obj\Debug\Composite.csproj.CoreCompileInputs.cache
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Composite\obj\Debug\Composite.exe
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Composite\obj\Debug\Composite.pdb

@@ -1,0 +1,7 @@
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\DesignPatterns\bin\Debug\DesignPatterns.exe.config
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\DesignPatterns\bin\Debug\DesignPatterns.exe
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\DesignPatterns\bin\Debug\DesignPatterns.pdb
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\DesignPatterns\obj\Debug\Singleton.csprojAssemblyReference.cache
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\DesignPatterns\obj\Debug\Singleton.csproj.CoreCompileInputs.cache
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\DesignPatterns\obj\Debug\DesignPatterns.exe
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\DesignPatterns\obj\Debug\DesignPatterns.pdb
