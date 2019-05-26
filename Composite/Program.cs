@@ -13,7 +13,31 @@ namespace Composite
     {
         static void Main(string[] args)
         {
+            Employee Alparslan = new Employee
+            {
+                Name = "Alparslan Pamuk"
+            };
 
+            Employee Mustafa = new Employee
+            {
+                Name = "Mustafa Pamuk"
+            };
+
+            Alparslan.AddSubordinate(Alparslan);
+
+            Employee emp = new Employee
+            {
+                Name = "Emp Pamuk"
+            };
+
+            Alparslan.AddSubordinate(emp);
+
+            Employee emp2 = new Employee
+            {
+                Name = "Emp2 Pamuk"
+            };
+
+            Mustafa.AddSubordinate(emp2);
         }
     }
      
@@ -36,11 +60,20 @@ namespace Composite
             _subortinates.Remove(person);
         }
 
+        public IPerson GetSubordinate(int index)
+        {
+            return _subortinates[index];
+        }
+
         public string Name { get; set; }
 
         public IEnumerator<IPerson> GetEnumerator()
         {
-            throw new NotImplementedException();
+            foreach (var subordinate in _subortinates)
+            {
+                //inumarable bu yüzden yield
+                yield return subordinate;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
