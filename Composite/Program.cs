@@ -32,6 +32,9 @@ namespace Composite
 
             Alparslan.AddSubordinate(emp);
 
+            Contractor ali = new Contractor { Name = "Ali" };
+            emp.AddSubordinate(ali);
+
             Employee emp2 = new Employee
             {
                 Name = "Hüseyin Pamuk"
@@ -44,7 +47,8 @@ namespace Composite
             foreach (Employee manager in Alparslan)
             {
                 Console.WriteLine("  {0}",manager.Name); // Alt çalışanları yazdırıyoruz
-                foreach (var employee in manager)
+
+                foreach (IPerson employee in manager)
                 {
                     Console.WriteLine("    {0}", employee.Name);
                 }
@@ -58,6 +62,11 @@ namespace Composite
     interface IPerson // Kurum çalışanları 
     {
         string Name { get; set; }
+    }
+
+    class Contractor:IPerson
+    {
+        public string Name { get; set; } 
     }
 
     class Employee : IPerson,IEnumerable<IPerson>
