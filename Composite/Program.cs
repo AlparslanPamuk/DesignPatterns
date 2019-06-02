@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Composite
 {
     // bir kurumdaki çalışanlar ve o çalışanların hiyerarşisini modelleyeceğiz
-    //çnümüzde bir ekran var bu ekranda kullanıcıları sürükle bırak yöntemiyle hiyerarşik bir yöntem çiziyoruz 
+    //önümüzde bir ekran var bu ekranda kullanıcıları sürükle bırak yöntemiyle hiyerarşik bir yöntem çiziyoruz 
     class Program
     {
         static void Main(string[] args)
@@ -34,10 +34,24 @@ namespace Composite
 
             Employee emp2 = new Employee
             {
-                Name = "Emp2 Pamuk"
+                Name = "Hüseyin Pamuk"
             };
 
             Mustafa.AddSubordinate(emp2);
+
+            Console.WriteLine(Alparslan.Name);
+
+            foreach (Employee manager in Alparslan)
+            {
+                Console.WriteLine("  {0}",manager.Name); // Alt çalışanları yazdırıyoruz
+                foreach (var employee in manager)
+                {
+                    Console.WriteLine("    {0}", employee.Name);
+                }
+
+            }
+
+            Console.ReadLine();
         }
     }
      
