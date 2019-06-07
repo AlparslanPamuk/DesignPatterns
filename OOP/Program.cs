@@ -8,27 +8,43 @@ namespace OOP
 {
     class human
     {
-        public string name;
-        private int weight;
-        public void setWeight(int weight)
+        public human()
+        {
+            Console.WriteLine("New human object is created");
+        }
+        public human(int weight)
         {
             this.weight = weight;
         }
-        public int getWeight()
+        public string name;
+        private int weight;
+        public int Weight
         {
-            return weight;
+            get
+            {
+                return weight;
+            }
+            set
+            {
+                if (value < 0)
+                    this.weight = 0;
+                else
+                    this.weight = value;
+            }
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            human Alparslan = new human();
+            human Alparslan = new human(80);
             Alparslan.name = "Mustafa";
-            Alparslan.setWeight(80);
+            
             human Mustafa = new human();
 
-            Console.WriteLine("Alparslan's weight:" + Alparslan.getWeight());
+            Console.WriteLine("Mustafa's weight:" + Alparslan.Weight);
+            Alparslan.Weight = -10;
+            Console.WriteLine("Mustafa's weight:" + Alparslan.Weight);
             Console.ReadLine();
         }
     }
