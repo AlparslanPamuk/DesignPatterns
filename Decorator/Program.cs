@@ -20,21 +20,21 @@ namespace Decorator
     {
         public abstract string Make { get; set; }
         public abstract string Model { get; set; }
-        public abstract string HirePrice { get; set; }
+        public abstract decimal HirePrice { get; set; }
     }
 
     class PersonalCar : CarBase
     {
         public override string Make { get; set; }
         public override string Model { get; set; }
-        public override string HirePrice { get; set; }
+        public override decimal HirePrice { get; set; }
     }
 
     class CommercialCar : CarBase
     {
         public override string Make { get; set; }
         public override string Model { get; set; }
-        public override string HirePrice { get; set; }
+        public override decimal HirePrice { get; set; }
     }
 
     abstract class CarDecoratorBase : CarBase
@@ -44,6 +44,31 @@ namespace Decorator
         protected CarDecoratorBase(CarBase carBase)
         {
             _carBase = carBase;
+        }
+    }
+
+    class SpecialOffer : CarDecoratorBase
+    {
+        private readonly CarBase _carBase;
+
+        public SpecialOffer(CarBase carBase) : base(carBase)
+        {
+            _carBase = carBase;
+        }
+
+        public override string Make { get; set; }
+        public override string Model { get; set; }
+
+        public override decimal HirePrice
+        {
+            get
+            {
+                return _carBase.HirePrice * 90 / 100;
+            }
+            set
+            {
+
+            }
         }
     }
 }
