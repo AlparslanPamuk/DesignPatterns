@@ -11,7 +11,7 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
-
+            var personalCar = new PersonalCar();
         }
 
     }
@@ -22,4 +22,29 @@ namespace Decorator
         public abstract string Model { get; set; }
         public abstract string HirePrice { get; set; }
     }
+
+    class PersonalCar : CarBase
+    {
+        public override string Make { get; set; }
+        public override string Model { get; set; }
+        public override string HirePrice { get; set; }
+    }
+
+    class CommercialCar : CarBase
+    {
+        public override string Make { get; set; }
+        public override string Model { get; set; }
+        public override string HirePrice { get; set; }
+    }
+
+    abstract class CarDecoratorBase : CarBase
+    {
+        private CarBase _carBase;
+
+        protected CarDecoratorBase(CarBase carBase)
+        {
+            _carBase = carBase;
+        }
+    }
 }
+
