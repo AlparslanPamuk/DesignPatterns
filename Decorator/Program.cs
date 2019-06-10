@@ -11,7 +11,15 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
-            var personalCar = new PersonalCar();
+            var personalCar = new PersonalCar {Make="BMW", Model="3.20", HirePrice= 2500 };
+
+            SpecialOffer specialOffer = new SpecialOffer(personalCar);
+            specialOffer.DiscountPercentage = 10;
+
+            Console.WriteLine("Concrete : {0}", personalCar.HirePrice);
+            Console.WriteLine("Special Offer : {0}", specialOffer.HirePrice);
+
+            Console.ReadLine();
         }
 
     }
@@ -47,8 +55,9 @@ namespace Decorator
         }
     }
 
-    class SpecialOffer : CarDecoratorBase
+    class SpecialOffer : CarDecoratorBase // 
     {
+        public int DiscountPercentage { get; set; } // New features can be added!
         private readonly CarBase _carBase;
 
         public SpecialOffer(CarBase carBase) : base(carBase)
@@ -63,7 +72,7 @@ namespace Decorator
         {
             get
             {
-                return _carBase.HirePrice * 90 / 100;
+                return _carBase.HirePrice-_carBase.HirePrice * DiscountPercentage/100;
             }
             set
             {
