@@ -1,0 +1,7 @@
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Proxy\bin\Debug\Proxy.exe.config
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Proxy\bin\Debug\Proxy.exe
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Proxy\bin\Debug\Proxy.pdb
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Proxy\obj\Debug\Proxy.csprojAssemblyReference.cache
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Proxy\obj\Debug\Proxy.csproj.CoreCompileInputs.cache
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Proxy\obj\Debug\Proxy.exe
+C:\Users\alp_g\OneDrive\Desktop\Udemy Patterns\DesignPatterns\Proxy\obj\Debug\Proxy.pdb
