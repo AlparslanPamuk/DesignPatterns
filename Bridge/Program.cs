@@ -10,11 +10,15 @@ namespace Bridge
     {
         static void Main(string[] args)
         {
+            CustormerManager custormerManager = new CustormerManager();
+            custormerManager.MessageSenderBase = new SmsSender();
+            custormerManager.UpdateCustormer();
+            Console.ReadLine();
 
         }
     }
 
-    abstract class MessageManagerBase
+    abstract class MessageSenderBase
     {
         public void Save()
         {
@@ -30,19 +34,35 @@ namespace Bridge
         public string Text { get; set; }
     }
 
-    class SmsSender : MessageManagerBase
+    class SmsSender : MessageSenderBase
     {
         public override void Send(Body body)
         {
-            Console.WriteLine("{0} was sent via SmsSender",body);
+            Console.WriteLine("{0} was sent via SmsSender",body.Title);
         }
     }
 
-    class EmailSender : MessageManagerBase
+    class EmailSender : MessageSenderBase
     {
         public override void Send(Body body)
         {
-            Console.WriteLine("{0} was sent via EmailSender", body);
+            Console.WriteLine("{0} was sent via EmailSender", body.Title);
         }
     }
+
+
+
+    class CustormerManager
+        
+    {
+        public MessageSenderBase MessageSenderBase { get; set; }
+
+        public void UpdateCustormer()
+        {
+            MessageSenderBase.Send(new Body({Title = "About The Course!" });
+            Console.WriteLine("Customer Updated");
+        }
+    }
+
+    
 }
