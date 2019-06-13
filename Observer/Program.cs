@@ -11,7 +11,14 @@ namespace Observer
     {
         static void Main(string[] args)
         {
+            var customerObserver = new CustomerObserver();
+            ProductManager productManager = new ProductManager();
+            productManager.Attach(customerObserver); // This subscriber is informed
+            productManager.Attach(new EmployeeObserver());
+            productManager.Detach(customerObserver);
+            productManager.UpdatePrice();
 
+            Console.ReadLine();
         }
     }
 
@@ -21,9 +28,26 @@ namespace Observer
         public void UpdatePrice()
         {
             Console.WriteLine("Product Price is Updated!");
+            Notify();
         }
 
-        
+        public void Attach(Observer observer)
+        {
+            _observers.Add(observer);
+        }
+
+        public void Detach(Observer observer) // End of subscription
+        {
+            _observers.Remove(observer);
+        }
+
+        private void Notify()
+        {
+            foreach (var observer in _observers)
+            {
+                observer.Update();
+            }
+        }
     }
 
     abstract class Observer
