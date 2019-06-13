@@ -10,6 +10,13 @@ namespace Strategy
     {
         static void Main(string[] args)
         {
+            CustomerManager customerManager = new CustomerManager();
+            customerManager.CreditCalculatorBase = new After2010CreditCalculator();
+            customerManager.SaveCredit();
+
+            customerManager.CreditCalculatorBase = new Before2010CreditCalculator();
+            customerManager.SaveCredit();
+            Console.ReadLine();
         }
     }
 
@@ -36,9 +43,11 @@ namespace Strategy
 
     class CustomerManager
     {
+        public CreditCalculatorBase CreditCalculatorBase { get; set; }
         public void SaveCredit()
         {
             Console.WriteLine("Customer manager bussiness");
+            CreditCalculatorBase.Calculate();
         }
     }
 }
