@@ -16,4 +16,46 @@ namespace ChainOfResponsibility
         {
         }
     }
+
+    class Expense
+    {
+        public string Detail { get; set; }
+        public decimal Amounth { get; set; }
+    }
+
+    abstract class ExpenseHandlerBase
+    {
+        private ExpenseHandlerBase _successor;  
+
+        public abstract void HandlerExpense(); // harcama onayını yapma süreci (Herkesin farklı oludğu için)
+
+        public void SetSuccessor(ExpenseHandlerBase successor)
+        {
+            _successor = successor;
+        }
+    }
+
+    class Manager : ExpenseHandlerBase
+    {
+        public override void HandlerExpense()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    class VicePresident : ExpenseHandlerBase
+    {
+        public override void HandlerExpense()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    class President : ExpenseHandlerBase
+    {
+        public override void HandlerExpense()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
