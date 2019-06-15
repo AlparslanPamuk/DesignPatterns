@@ -14,6 +14,19 @@ namespace ChainOfResponsibility
     {
         static void Main(string[] args)
         {
+            Manager manager = new Manager();
+            VicePresident vicePresident = new VicePresident();
+            President president = new President();
+
+            manager.SetSuccessor(vicePresident);
+            vicePresident.SetSuccessor(president);
+
+            Expense expense = new Expense { Detail = "Training", Amounth = 11118};
+            //Expense expense = new Expense { Detail = "Training", Amounth = 98 };
+            //Expense expense = new Expense { Detail = "Training", Amounth = 256 };
+            manager.HandlerExpense(expense);
+
+            Console.ReadLine();
         }
     }
 

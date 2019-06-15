@@ -1,0 +1,7 @@
+C:\Projects\DesignPatterns\DesignPatterns\ChainOfResponsibility\bin\Debug\ChainOfResponsibility.exe.config
+C:\Projects\DesignPatterns\DesignPatterns\ChainOfResponsibility\bin\Debug\ChainOfResponsibility.exe
+C:\Projects\DesignPatterns\DesignPatterns\ChainOfResponsibility\bin\Debug\ChainOfResponsibility.pdb
+C:\Projects\DesignPatterns\DesignPatterns\ChainOfResponsibility\obj\Debug\ChainOfResponsibility.csprojAssemblyReference.cache
+C:\Projects\DesignPatterns\DesignPatterns\ChainOfResponsibility\obj\Debug\ChainOfResponsibility.csproj.CoreCompileInputs.cache
+C:\Projects\DesignPatterns\DesignPatterns\ChainOfResponsibility\obj\Debug\ChainOfResponsibility.exe
+C:\Projects\DesignPatterns\DesignPatterns\ChainOfResponsibility\obj\Debug\ChainOfResponsibility.pdb
