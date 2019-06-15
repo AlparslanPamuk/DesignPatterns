@@ -25,37 +25,56 @@ namespace ChainOfResponsibility
 
     abstract class ExpenseHandlerBase
     {
-        private ExpenseHandlerBase _successor;  
+        protected ExpenseHandlerBase Successor;  // Protected olduğunda inherit edildiği sınıfta kullanılabilir.
 
-        public abstract void HandlerExpense(); // harcama onayını yapma süreci (Herkesin farklı oludğu için)
+        public abstract void HandlerExpense(Expense expense); // harcama onayını yapma süreci (Herkesin farklı oludğu için)
 
         public void SetSuccessor(ExpenseHandlerBase successor)
         {
-            _successor = successor;
+            Successor = successor;
         }
     }
 
     class Manager : ExpenseHandlerBase
     {
-        public override void HandlerExpense()
+        public override void HandlerExpense(Expense expense)
         {
-            throw new NotImplementedException();
+            if (expense.Amounth<=100)
+            {
+                Console.WriteLine("Manager Handled the Expense.");
+            }
+            else if (Successor!=null) // Successor bunun bir üstü
+            {
+                Successor.HandlerExpense(expense);
+            }
+
         }
     }
 
     class VicePresident : ExpenseHandlerBase
     {
-        public override void HandlerExpense()
+        public override void HandlerExpense(Expense expense)
         {
-            throw new NotImplementedException();
+            if (expense.Amounth > 100 && expense.Amounth <=1000)
+            {
+                Console.WriteLine("Vice President Handled the Expense.");
+            }
+            else if (Successor != null) // Successor bunun bir üstü bu birimin bir üstü
+            {
+                Successor.HandlerExpense(expense);
+            }
         }
     }
 
     class President : ExpenseHandlerBase
     {
-        public override void HandlerExpense()
+        public override void HandlerExpense(Expense expense)
         {
-            throw new NotImplementedException();
+            if (expense.Amounth > 1000)
+            {
+                Console.WriteLine("President Handled the Expense.");
+            }
+            
         }
     }
 }
