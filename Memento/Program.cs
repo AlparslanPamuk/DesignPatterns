@@ -18,7 +18,7 @@ namespace Memento // bir nesne değişikliğe uğradıktan sonra eski haline get
     {
         public string _title { get; set; }
         public string _author { get; set; }
-        public string _ısbn { get; set; }
+        public string _isbn { get; set; }
         DateTime _lastEdited;
 
         public string Title
@@ -43,10 +43,10 @@ namespace Memento // bir nesne değişikliğe uğradıktan sonra eski haline get
 
         public string Isbn
         {
-            get { return _ısbn; }
+            get { return _isbn; }
             set
             {
-                _ısbn = value;
+                _isbn = value;
                 SetLastEdited();
             }
         }
@@ -55,5 +55,39 @@ namespace Memento // bir nesne değişikliğe uğradıktan sonra eski haline get
         {
             _lastEdited = DateTime.UtcNow;
         }
+
+        public Memento CreateUndo() // geriye almak içni bir algı operasyonu // our memory
+        {
+            return new Memento(_isbn, _title, _author,_lastEdited);
+        }
+
+        public void RestoreFromUndo(Memento memento) // kullanıcının ekranda değiştirdiği derğerleri eski haliyle düzeltiyor olacağız 
+        {
+            _title = memento.Title;
+            _author = memento.Author;
+            _isbn = memento.Isbn;
+            _lastEdited = memento.LastEdited;
+        }
+    }
+
+    class Memento
+    {
+        public string Isbn { get; set; }
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public DateTime LastEdited { get; set; }
+        
+        public Memento(string isbn, string title, string author, DateTime lastEdited)
+        {
+            Isbn = isbn;
+            Title = title;
+            Author = author;
+            LastEdited = lastEdited;
+        }
+    }
+
+    class CareTaker // Earlier updates
+    {
+        public Memento Memento { get; set; }
     }
 }
