@@ -10,7 +10,18 @@ namespace Memento // bir nesne değişikliğe uğradıktan sonra eski haline get
     {
         static void Main(string[] args)
         {
+            Book book = new Book
+            {
+                Isbn = "12345",
+                Title = "Mr Mercedes",
+                Author = "Stephen Kıng",
 
+                
+            };
+
+            book.ShowBook();
+
+            Console.ReadLine();
         }
     }
 
@@ -67,6 +78,11 @@ namespace Memento // bir nesne değişikliğe uğradıktan sonra eski haline get
             _author = memento.Author;
             _isbn = memento.Isbn;
             _lastEdited = memento.LastEdited;
+        }
+
+        public void ShowBook()
+        {
+            Console.WriteLine("{0},{1},{2} edited : {4}", Isbn,Title,Author,_lastEdited);
         }
     }
 
