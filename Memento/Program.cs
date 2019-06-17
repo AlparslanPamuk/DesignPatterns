@@ -20,6 +20,17 @@ namespace Memento // bir nesne değişikliğe uğradıktan sonra eski haline get
             };
 
             book.ShowBook();
+            CareTaker history = new CareTaker();
+            history.Memento = book.CreateUndo();
+
+            book.Isbn = "54321";
+            book.Title = "STEPHEN KING";
+
+            book.ShowBook();
+
+            book.RestoreFromUndo(history.Memento);
+            book.ShowBook();
+
 
             Console.ReadLine();
         }
