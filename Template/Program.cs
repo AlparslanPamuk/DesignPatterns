@@ -16,7 +16,21 @@ namespace Template
 
         static void Main(string[] args)
         {
-            
+            ScoringAlgorithm algorithm;
+            Console.WriteLine("Men");
+            algorithm = new MensScoringAlgorithm(); // method kimin için çalışacak
+            Console.WriteLine(algorithm.GenerateScore(10,new TimeSpan(0, 2, 34)));
+
+            Console.WriteLine("Women");
+            algorithm = new WomensScoringAlgorithm(); // method kimin için çalışacak
+            Console.WriteLine(algorithm.GenerateScore(10, new TimeSpan(0, 2, 34)));
+
+            Console.WriteLine("Children");
+            algorithm = new ChildrensScoringAlgorithm(); // method kimin için çalışacak
+            Console.WriteLine(algorithm.GenerateScore(10, new TimeSpan(0, 2, 34)));
+
+            Console.ReadLine();
+
         }
 
         
@@ -58,7 +72,7 @@ namespace Template
         }
     }
 
-    class WomansScoringAlgorithm : ScoringAlgorithm
+    class WomensScoringAlgorithm : ScoringAlgorithm
     {
         public override int CalculateBaseScore(int hits)
         {
