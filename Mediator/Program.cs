@@ -20,14 +20,25 @@ namespace Mediator
 
         abstract class CourseMember
         {
+            private Mediator _mediator;
 
+            protected CourseMember(Mediator mediator)
+            {
+                _mediator = mediator;
+            }
         }
 
         class Teacher : CourseMember
         {
+            public Teacher(Mediator mediator): base(mediator)
+            {
+
+            }
+
+            
             internal void ReceiveQuestion(string question, Student student)
             {
-                
+                Console.WriteLine("Techer is received a question from {0},{1}", student.Name,question);
             }
         }
 
@@ -40,8 +51,10 @@ namespace Mediator
 
             internal void ReceiveAnswer()
             {
-                throw new NotImplementedException();
+                
             }
+
+            public string Name { get; set; }
         }
 
         class Mediator // Mediator işlemleri yapan ve yönlendiren kısımdır. Öğrenciden mediatore mediatorden öğretmene öğretmenden mediatore sonra cevap öğrenciye
