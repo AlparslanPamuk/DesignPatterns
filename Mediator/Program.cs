@@ -20,11 +20,11 @@ namespace Mediator
 
         abstract class CourseMember
         {
-            private Mediator _mediator;
+            protected Mediator Mediator;
 
             protected CourseMember(Mediator mediator)
             {
-                _mediator = mediator;
+                Mediator = mediator;
             }
         }
 
@@ -40,13 +40,29 @@ namespace Mediator
             {
                 Console.WriteLine("Techer is received a question from {0},{1}", student.Name,question);
             }
+
+            public void SendNewImageUrl(string url)
+            {
+                Console.WriteLine("Teacher changed slide: {0}",url);
+                Mediator.UpdateImage(url);
+            }
+
+            public void AnswerQuestion(string answer ,Student student)
+            {
+                Console.WriteLine("Teacher answered the question {0},{1}",student.Name,answer);
+            }
         }
 
         class Student : CourseMember
         {
+            public Student(Mediator mediator): base(mediator)
+            {
+
+            }
+
             internal void ReceiveImage(string url)
             {
-                
+                Console.WriteLine("Student received image : {0}",url);
             }
 
             internal void ReceiveAnswer()
