@@ -25,7 +25,19 @@ namespace Mediator
             Student mustafa = new Student(mediator);
             mustafa.Name = "Mustafa";
 
-            mediator.Students.Add(mustafa);
+            
+
+            Student inanç = new Student(mediator);
+            inanç.Name = "Inanç";
+
+            mediator.Students = new List<Student> { inanç, mustafa };
+
+            alparslan.SendNewImageUrl("slide1.jpg");
+            alparslan.ReceiveQuestion("'is it true?'", mustafa);
+
+            Console.ReadLine();
+
+            
 
         }
 
@@ -74,7 +86,7 @@ namespace Mediator
 
             internal void ReceiveImage(string url)
             {
-                Console.WriteLine("Student received image : {0}",url);
+                Console.WriteLine("{1} received image : {0}",url,Name);
             }
 
             internal void ReceiveAnswer(string answer)
