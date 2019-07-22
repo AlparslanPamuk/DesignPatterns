@@ -15,6 +15,17 @@ namespace Mediator
     {
         static void Main(string[] args)
         {
+            Mediator mediator = new Mediator();
+
+            Teacher alparslan = new Teacher( mediator );
+            alparslan.Name = "Mustafa Alparslan";
+
+            mediator.Teacher = alparslan;
+
+            Student mustafa = new Student(mediator);
+            mustafa.Name = "Mustafa";
+
+            mediator.Students.Add(mustafa);
 
         }
 
@@ -35,7 +46,8 @@ namespace Mediator
 
             }
 
-            
+            public string Name { get; set; }
+
             internal void ReceiveQuestion(string question, Student student)
             {
                 Console.WriteLine("Techer is received a question from {0},{1}", student.Name,question);
@@ -65,9 +77,9 @@ namespace Mediator
                 Console.WriteLine("Student received image : {0}",url);
             }
 
-            internal void ReceiveAnswer()
+            internal void ReceiveAnswer(string answer)
             {
-                
+                Console.WriteLine("Student received answer {0}",answer);
             }
 
             public string Name { get; set; }
@@ -93,7 +105,7 @@ namespace Mediator
 
             public void SendAnswer(string answer,Student student)
             {
-                student.ReceiveAnswer();
+                student.ReceiveAnswer(answer);
             }
         }
     }
