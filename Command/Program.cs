@@ -10,6 +10,19 @@ namespace Command // bir metin dosyasını açtığımızda ya da herhangibi edi
     {
         static void Main(string[] args)
         {
+            StockManager stockManager = new StockManager();
+            BuyStock buyStock = new BuyStock(stockManager);
+            SellStock sellStock = new SellStock(stockManager);
+
+            StockController stockController = new StockController();
+
+            stockController.TakeOrder(buyStock);
+            stockController.TakeOrder(sellStock);
+            stockController.TakeOrder(buyStock);
+
+            stockController.PlaceOrders();
+
+            Console.ReadLine();
 
         }
     }
@@ -68,10 +81,22 @@ namespace Command // bir metin dosyasını açtığımızda ya da herhangibi edi
 
     class StockController
     {
-        List<IOrder> _orders = new List<IOrder>();
-        public void TakeOrder()
-        {
 
+        List<IOrder> _orders = new List<IOrder>();
+
+        public void TakeOrder(IOrder order)
+        {
+            _orders.Add(order);
+        }
+
+        public void PlaceOrders()
+        {
+            foreach (var order in _orders)
+            {
+                order.Execute();
+            }
+
+            _orders.Clear();
         }
     }
 }
