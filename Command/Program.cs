@@ -14,7 +14,7 @@ namespace Command // bir metin dosyasını açtığımızda ya da herhangibi edi
         }
     }
 
-    class Stock 
+    class StockManager
     {
         private string _name = "Laptop"; // field olduğu için alt tire
         private int _quantity = 10;
@@ -37,17 +37,41 @@ namespace Command // bir metin dosyasını açtığımızda ya da herhangibi edi
 
     class BuyStock : IOrder
     {
+        private StockManager _stockManager;
+
+        public BuyStock(StockManager stockManager)
+        {
+            _stockManager = stockManager;
+        }
+
+        public void Execute()
+        {
+            _stockManager.Buy();
+        }
+    }
+
+    class SellStock : IOrder
+    {
+
+        private StockManager _stockManager;
+
+        public SellStock(StockManager stockManager) // komutların nesne haline getirilmesini sağlamış olduk
+        {
+            _stockManager = stockManager;
+        }
+
         public void Execute()
         {
             
         }
     }
 
-    class SellStock : IOrder
+    class StockController
     {
-        public void Execute()
+        List<IOrder> _orders = new List<IOrder>();
+        public void TakeOrder()
         {
-            
+
         }
     }
 }
