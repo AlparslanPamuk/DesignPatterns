@@ -16,28 +16,58 @@ namespace Visitor // birbirine benzeyen ya da hiyerarşik nesnelerin aynı metho
 
         class OrganisationalStructure
         {
-            private EmployeeBase _employee;
+            public EmployeeBase Employee; // public yapınca büyük harfle yazmamız gerekiyor.
 
             public OrganisationalStructure(EmployeeBase firstEmployee)
             {
-                _employee = firstEmployee;
+                Employee = firstEmployee;
             }
 
             public void Accept(VisitorBase visitor)
             {
-                EmployeeBase.Accept(visitor);
+                Employee.Accept(visitor);
             }
         }
 
         abstract class EmployeeBase
         {
-            public abstract  void Accept(VisitorBase visitor)
-            
+            public abstract void Accept(VisitorBase visitor);
+            public string Name { get; set; }
+            public decimal Salary { get; set; }
+
         }
 
-        class VisitorBase
+        class Manager : EmployeeBase
         {
+            public Manager()
+            {
+                Subordinates = new List<EmployeeBase>();
+            }
 
+            public List<EmployeeBase> Subordinates { get; set; }
+
+            public override void Accept(VisitorBase visitor)
+            {
+                visitor.Visit();
+
+                foreach (var employee in Subordinates)
+                {
+                    employee.Accept(visitor);
+                }
+            }
+        }
+
+        class Worker : EmployeeBase
+        {
+            public override void Accept(VisitorBase visitor)
+            {
+                visitor.Visit();
+            }
+        }
+
+        abstract class VisitorBase
+        {
+            public abstract void Visit();
         }
     }
 }
