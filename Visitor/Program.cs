@@ -11,6 +11,26 @@ namespace Visitor // birbirine benzeyen ya da hiyerarşik nesnelerin aynı metho
     {
         static void Main(string[] args)
         {
+            Manager mustafa = new Manager { Name = "Mustafa", Salary = 1000 };
+            Manager alparslan = new Manager { Name = "Alparslan", Salary = 2000 };
+
+            Worker worker1 = new Worker { Name = "worker", Salary = 800 };
+            Worker worker2 = new Worker { Name = "worker2", Salary = 900 };
+
+            mustafa.Subordinates.Add(alparslan);
+            alparslan.Subordinates.Add(worker1);
+            alparslan.Subordinates.Add(worker2);
+
+            OrganisationalStructure organisationalStructure = new OrganisationalStructure(mustafa);
+
+            PayrollVisitor payrollVisitor = new PayrollVisitor();
+            PayriseVisitor payriseVisitor = new PayriseVisitor();
+
+            organisationalStructure.Accept(payrollVisitor);
+            organisationalStructure.Accept(payriseVisitor);
+
+
+            Console.ReadLine();
 
         }
 
@@ -84,7 +104,7 @@ namespace Visitor // birbirine benzeyen ya da hiyerarşik nesnelerin aynı metho
             }
         }
 
-        class Payrise : VisitorBase
+        class PayriseVisitor : VisitorBase
         {
             public override void Visit(Worker worker)
             {
