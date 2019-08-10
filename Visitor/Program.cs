@@ -48,7 +48,7 @@ namespace Visitor // birbirine benzeyen ya da hiyerarşik nesnelerin aynı metho
 
             public override void Accept(VisitorBase visitor)
             {
-                visitor.Visit();
+                visitor.Visit(this);
 
                 foreach (var employee in Subordinates)
                 {
@@ -61,13 +61,40 @@ namespace Visitor // birbirine benzeyen ya da hiyerarşik nesnelerin aynı metho
         {
             public override void Accept(VisitorBase visitor)
             {
-                visitor.Visit();
+                visitor.Visit(this);
             }
         }
 
-        abstract class VisitorBase
+        abstract class VisitorBase // Bizim tüm personel için maaş ödeme ya da zam yapma işlemleri veya bir kısmı için yapmak 
         {
-            public abstract void Visit();
+            public abstract void Visit(Worker worker);
+            public abstract void Visit(Manager manager);
+        }
+
+        class PayrollVisitor : VisitorBase
+        {
+            public override void Visit(Worker worker)
+            {
+                Console.WriteLine("{0} paid {1}", worker.Name, worker.Salary);
+            }
+
+            public override void Visit(Manager manager)
+            {
+                Console.WriteLine("{0} paid {1}", manager.Name, manager.Salary);
+            }
+        }
+
+        class Payrise : VisitorBase
+        {
+            public override void Visit(Worker worker)
+            {
+                Console.WriteLine("{0} salary increased to {1}", worker.Name, worker.Salary*(decimal)  1.1);
+            }
+
+            public override void Visit(Manager manager)
+            {
+                Console.WriteLine("{0} salary increased to {1}", manager.Name, manager.Salary*(decimal)  1.2);
+            }
         }
     }
 }
