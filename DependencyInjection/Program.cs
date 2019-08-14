@@ -15,8 +15,16 @@ namespace DependencyInjection
     {
         static void Main(string[] args)
         {
+            ProductManager productManager = new ProductManager();
+            productManager.Save();
 
+            Console.ReadLine();
         }
+    }
+
+    interface IProductDal
+    {
+        void Save();
     }
 
     class ProductDataAccessLayer
