@@ -15,7 +15,8 @@ namespace DependencyInjection
     {
         static void Main(string[] args)
         {
-            ProductManager productManager = new ProductManager(new EfProductDal());
+         
+            ProductManager productManager = new ProductManager(new NhProductDal());
             productManager.Save();
 
             Console.ReadLine();
@@ -32,6 +33,15 @@ namespace DependencyInjection
         public void Save()
         {
             Console.WriteLine("Saved with Ef");
+        }
+    }
+
+    class NhProductDal : IProductDal
+    {
+
+        public void Save()
+        {
+            Console.WriteLine("Saved with Nh");
         }
     }
 
