@@ -15,7 +15,7 @@ namespace DependencyInjection
     {
         static void Main(string[] args)
         {
-            ProductManager productManager = new ProductManager();
+            ProductManager productManager = new ProductManager(new EfProductDal());
             productManager.Save();
 
             Console.ReadLine();
@@ -27,22 +27,38 @@ namespace DependencyInjection
         void Save();
     }
 
+    class EfProductDal : IProductDal {
+
+        public void Save()
+        {
+            Console.WriteLine("Saved with Ef");
+        }
+    }
+
     class ProductDataAccessLayer
     {
         public void Save()
         {
             Console.WriteLine("Saved with entityFramework");
         }
-    }
+    } 
 
     class ProductManager
     {
+
+        private IProductDal _productDal;
+
+        public ProductManager(IProductDal productDal)
+        {
+            _productDal = productDal;
+        }
+
         public void Save()
         {
             //Busiiness Code
 
-            ProductDataAccessLayer productDataAccessLayer = new ProductDataAccessLayer();
-            productDataAccessLayer.Save();
+            _productDal.Save();
+            
         }
     }
 }
