@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visitor", "Visitor\Visitor.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{171DABE9-7085-424B-9A70-9671C11D6C25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullObject", "NullObject\NullObject.csproj", "{FA614422-9071-4B1A-877B-FF04AF0363E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{171DABE9-7085-424B-9A70-9671C11D6C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{171DABE9-7085-424B-9A70-9671C11D6C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{171DABE9-7085-424B-9A70-9671C11D6C25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA614422-9071-4B1A-877B-FF04AF0363E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA614422-9071-4B1A-877B-FF04AF0363E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA614422-9071-4B1A-877B-FF04AF0363E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA614422-9071-4B1A-877B-FF04AF0363E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
