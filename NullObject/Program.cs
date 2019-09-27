@@ -10,7 +10,9 @@ namespace NullObject
     {
         static void Main(string[] args)
         {
-
+            CustomerManager customerManager = new CustomerManager(StubLogger.GetLogger());
+            customerManager.Save();
+            Console.ReadLine();
         }
     }
 
@@ -52,4 +54,38 @@ namespace NullObject
         }
     }
 
+    class StubLogger : Ilogger
+    {
+        private static StubLogger _stubLogger;
+        private static object _lock = new object();
+
+        private StubLogger() { }
+
+        public static StubLogger GetLogger()
+        {
+            lock (_lock)
+            {
+                if (_stubLogger == null)
+                {
+                    _stubLogger = new StubLogger();
+                }
+            }
+            return _stubLogger;
+        }
+        public void Log()
+        {
+            
+        }
+    }
+
+    class CustomerManagerTest
+    {
+        public void SaveTest()
+        {
+            CustomerManager customerManager = new CustomerManager(StubLogger.GetLogger());
+            customerManager.Save();
+
+
+        }
+    }
 }
