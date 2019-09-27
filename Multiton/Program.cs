@@ -15,8 +15,27 @@ namespace Multiton
         }
     }
 
-    class Multiton
+    class Camera
     {
+        static Dictionary<string, Camera> _cameras = new Dictionary<string, Camera>();     //birden fazla instance olacağı için bunları bir dictionary ile tutuyoruz 
+        static object _lock = new object();
+        public Guid Id { get; set; }
+        private string brand;
+        private Camera()
+        {
+            Id = Guid.NewGuid();
+        }
 
+        public static Camera GetCamera(string brand)
+        {
+            lock (_lock)
+            {
+                if (!_cameras.ContainsKey(brand))
+                {
+                    _cameras.Add(brand, new Camera());
+                }
+            }
+            return _cameras[brand];
+        }
     }
 }
