@@ -1,0 +1,7 @@
+C:\Projects\DesignPatterns\DesignPatterns\Interfaces\bin\Debug\Interfaces.exe.config
+C:\Projects\DesignPatterns\DesignPatterns\Interfaces\bin\Debug\Interfaces.exe
+C:\Projects\DesignPatterns\DesignPatterns\Interfaces\bin\Debug\Interfaces.pdb
+C:\Projects\DesignPatterns\DesignPatterns\Interfaces\obj\Debug\Interfaces.csprojAssemblyReference.cache
+C:\Projects\DesignPatterns\DesignPatterns\Interfaces\obj\Debug\Interfaces.csproj.CoreCompileInputs.cache
+C:\Projects\DesignPatterns\DesignPatterns\Interfaces\obj\Debug\Interfaces.exe
+C:\Projects\DesignPatterns\DesignPatterns\Interfaces\obj\Debug\Interfaces.pdb
