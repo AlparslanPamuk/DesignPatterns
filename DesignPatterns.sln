@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullObject", "NullObject\Nu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multiton", "Multiton\Multiton.csproj", "{E38140F1-9617-4756-8224-59D2B942867F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecapDemo", "RecapDemo\RecapDemo.csproj", "{57D67BCC-5D3B-4BB3-8D22-A5A33ABFA8B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{E38140F1-9617-4756-8224-59D2B942867F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E38140F1-9617-4756-8224-59D2B942867F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E38140F1-9617-4756-8224-59D2B942867F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57D67BCC-5D3B-4BB3-8D22-A5A33ABFA8B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57D67BCC-5D3B-4BB3-8D22-A5A33ABFA8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57D67BCC-5D3B-4BB3-8D22-A5A33ABFA8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57D67BCC-5D3B-4BB3-8D22-A5A33ABFA8B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

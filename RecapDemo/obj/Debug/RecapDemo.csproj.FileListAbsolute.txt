@@ -1,0 +1,10 @@
+C:\Projects\DesignPatterns\DesignPatterns\RecapDemo\bin\Debug\RecapDemo.exe.config
+C:\Projects\DesignPatterns\DesignPatterns\RecapDemo\bin\Debug\RecapDemo.exe
+C:\Projects\DesignPatterns\DesignPatterns\RecapDemo\bin\Debug\RecapDemo.pdb
+C:\Projects\DesignPatterns\DesignPatterns\RecapDemo\obj\Debug\RecapDemo.csprojAssemblyReference.cache
+C:\Projects\DesignPatterns\DesignPatterns\RecapDemo\obj\Debug\RecapDemo.Form1.resources
+C:\Projects\DesignPatterns\DesignPatterns\RecapDemo\obj\Debug\RecapDemo.Properties.Resources.resources
+C:\Projects\DesignPatterns\DesignPatterns\RecapDemo\obj\Debug\RecapDemo.csproj.GenerateResource.cache
+C:\Projects\DesignPatterns\DesignPatterns\RecapDemo\obj\Debug\RecapDemo.csproj.CoreCompileInputs.cache
+C:\Projects\DesignPatterns\DesignPatterns\RecapDemo\obj\Debug\RecapDemo.exe
+C:\Projects\DesignPatterns\DesignPatterns\RecapDemo\obj\Debug\RecapDemo.pdb
