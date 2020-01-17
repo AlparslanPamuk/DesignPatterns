@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecapDemo", "RecapDemo\Reca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{3D410408-FF8E-43CE-9193-9175E3469CE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectionSortAndBubbleSortAlgorithm", "SelectionSortAndBubbleSortAlgorithm\SelectionSortAndBubbleSortAlgorithm.csproj", "{ED5952C4-BFD1-4C9E-97D0-31F3E2BA15C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,10 @@ Global
 		{3D410408-FF8E-43CE-9193-9175E3469CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D410408-FF8E-43CE-9193-9175E3469CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D410408-FF8E-43CE-9193-9175E3469CE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED5952C4-BFD1-4C9E-97D0-31F3E2BA15C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED5952C4-BFD1-4C9E-97D0-31F3E2BA15C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED5952C4-BFD1-4C9E-97D0-31F3E2BA15C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED5952C4-BFD1-4C9E-97D0-31F3E2BA15C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
